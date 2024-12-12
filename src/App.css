@@ -1,0 +1,102 @@
+.App {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.game {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  max-width: 800px;
+  margin-bottom: 20px;
+}
+
+.board {
+  display: grid;
+  grid-template-columns: repeat(15, 40px); /* Increased size */
+  grid-gap: 1px;
+  background-color: #999;
+  border: 2px solid #000; /* Added border */
+}
+
+.board-row {
+  display: contents;
+}
+
+.square {
+  width: 40px; /* Increased size */
+  height: 40px; /* Increased size */
+  background-color: #fff;
+  position: relative;
+  cursor: pointer;
+}
+
+.square:focus {
+  outline: none;
+}
+
+.stone {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 36px; /* Adjusted size */
+  height: 36px; /* Adjusted size */
+  border-radius: 50%;
+}
+
+.square.black .stone {
+  background-color: black;
+}
+
+.square.white .stone {
+  background-color: grey;
+}
+
+.status {
+  margin-bottom: 10px;
+  font-size: 18px; /* Increased font size */
+}
+
+.game-info {
+  margin-left: 20px;
+  font-size: 16px; /* Increased font size */
+}
+
+.move-button {
+  width: 100px; /* Button width */
+  height: 30px; /* Button height */
+  font-size: 14px; /* Font size for button text */
+  text-align: center; /* Center text horizontally */
+  line-height: 30px; /* Vertically center text */
+  margin-bottom: 5px; /* Space between buttons */
+  border: 1px solid #ccc; /* Border around button */
+  border-radius: 5px; /* Rounded corners */
+  background-color: #f9f9f9; /* Light gray background */
+  cursor: pointer; /* Pointer cursor on hover */
+}
+
+.move-button:hover {
+  background-color: #e0e0e0; /* Slightly darker background on hover */
+}
+
+@media (max-width: 800px) {
+  .board {
+    grid-template-columns: repeat(15, 34px);
+  }
+  .square {
+    width: 34px;
+    height: 34px;
+  }
+  .stone {
+    width: 30px;
+    height: 30px;
+  }
+}
